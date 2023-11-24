@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: denizozd <denizozd@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 21:43:14 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/23 21:47:22 by denizozd         ###   ########.fr       */
+/*   Created: 2023/11/23 14:13:01 by denizozd          #+#    #+#             */
+/*   Updated: 2023/11/23 14:16:06 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *input, ...)
+int	ft_check_type(void *c)
 {
-	
+}
+
+int	ft_printf(const char *, ...)
+{
 }
