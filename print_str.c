@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 14:16:28 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/24 12:07:09 by denizozd         ###   ########.fr       */
+/*   Created: 2023/11/24 12:38:22 by denizozd          #+#    #+#             */
+/*   Updated: 2023/11/24 13:36:18 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "./libft/libft.h"
+int	print_str(char *str)
+{
+	int	i;
 
-int	ft_printf(const char *input, ...);
-
-#endif
+	i = 0;
+	if (!str)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (5);
+	}
+	while (str[i])
+		i++;
+	ft_putstr_fd(str, 1);
+	return (i);
+}
