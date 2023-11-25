@@ -6,13 +6,13 @@
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:08:07 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/24 15:46:13 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 13:09:03 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	count_ptr(unsigned long ptr)
+static int	count_ptr(unsigned long ptr) //do not replace with printhex as different parameter type
 {
 	int	i;
 
@@ -29,15 +29,15 @@ static int	print_hex(unsigned long ptr)
 {
 	if (ptr >= 16)
 	{
-		printhex(ptr / 16);
-		printhex(ptr % 16);
+		print_hex(ptr / 16);
+		print_hex(ptr % 16);
 	}
 	else
 	{
 		if (ptr <= 9)
-			ft_putchar(ptr + '0');
+			ft_putchar_fd(ptr + '0', 1);
 		else
-			ft_putchar(ptr + 'A' - 10);
+			ft_putchar_fd(ptr + 'A' - 10, 1);
 	}
 	return (count_ptr(ptr));
 }
