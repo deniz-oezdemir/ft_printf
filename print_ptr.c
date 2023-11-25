@@ -6,7 +6,7 @@
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:08:07 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 13:09:03 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 18:16:03 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ static int	count_ptr(unsigned long ptr) //do not replace with printhex as differ
 	return (i);
 }
 
-static int	print_hex(unsigned long ptr)
+static int	print_ptrhex(unsigned long ptr)
 {
 	if (ptr >= 16)
 	{
-		print_hex(ptr / 16);
-		print_hex(ptr % 16);
+		print_ptrhex(ptr / 16);
+		print_ptrhex(ptr % 16);
 	}
 	else
 	{
@@ -55,7 +55,7 @@ int	print_ptr(unsigned long ptr)
 	else
 	{
 		ft_putstr_fd("0x", 1);
-		len = len + print_hex(ptr);
+		len = len + print_ptrhex(ptr);
 	}
 	return (len);
 }

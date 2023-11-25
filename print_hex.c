@@ -6,7 +6,7 @@
 /*   By: denizozd <denizozd@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:43:59 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 13:00:13 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:00:46 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	hex_len(unsigned int n)
 	return (len);
 }
 
-int	print_hex(unsigned int n, char format)
+int	print_hex(unsigned int n, int format)
 {
 	int	len;
 
