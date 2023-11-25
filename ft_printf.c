@@ -6,33 +6,29 @@
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:13:01 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 19:51:12 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 22:42:51 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	conversion(const char *str, void *arg)
+int	conversion(const char *str, va_list args)
 {
 	int	i;
 
 	i = 0;
 	if (*str == 'c')
-		i = i + print_char((char)arg);
+		i = i + print_char(va_arg(args, int));
 	else if (*str == 's')
-		i = i + print_str((char *)arg);
+		i = i + print_str(va_arg(args, char *));
 	else if (*str == 'p')
-		i = i + print_ptr((unsigned long)arg);
-	else if (*str == 'd')
-		i = i + print_int((int)arg);
-	else if (*str == 'i')
-		i = i + print_int((int)arg);
+		i = i + print_ptr(va_arg(args, unsigned long));
+	else if (*str == 'd' || *str == 'i')
+		i = i + print_int(va_arg(args, int));
 	else if (*str == 'u')
-		i = i + print_uns((unsigned int)arg);
-	else if (*str == 'x')
-		i = i + print_hex((unsigned int)arg, 'x');
-	else if (*str == 'X')
-		i = i + print_hex((unsigned int)arg, 'X');
+		i = i + print_uns(va_arg(args, unsigned int));
+	else if (*str == 'x' || *str == 'X')
+		i = i + print_hex(va_arg(args, unsigned int), *str);
 	return (i);
 }
 
@@ -53,7 +49,7 @@ int	ft_printf(const char *str, ...)
 			if (*str == '%')
 				i = i + print_char('%');
 			else if (ft_strchr("cspdiuxX", *str))
-				i = i + conversion(str, va_arg(args, void *));
+				i = i + conversion(str, args);
 		}
 		else
 			i = i + print_char(*str);
