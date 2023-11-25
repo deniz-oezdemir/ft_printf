@@ -6,13 +6,13 @@
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:08:07 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 18:16:03 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:14:38 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	count_ptr(unsigned long ptr) //do not replace with printhex as different parameter type
+static int	count_ptr(unsigned long ptr)
 {
 	int	i;
 

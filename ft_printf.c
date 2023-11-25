@@ -6,7 +6,7 @@
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:13:01 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 13:02:21 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:33:23 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	conversion(const char *str, void *arg)
 {
-	int	i; //change all counters in this project to size_t?
+	int	i;
 
 	i = 0;
 	if (*str == 'c')
-		i = i + print_char((char)arg); //maybe different casting?
+		i = i + print_char((char)arg);
 	else if (*str == 's')
 		i = i + print_str((char *)arg);
 	else if (*str == 'p')
@@ -59,6 +59,19 @@ int	ft_printf(const char *str, ...)
 			i = i + print_char(*str);
 		str++;
 	}
-	va_end(args);
 	return (i);
+}
+
+#include <stdio.h>
+int	main(void)
+{
+	//string
+	int	i;
+	int	j;
+	printf("Test 3:\n");
+	char str[] = "friend";
+	i = printf("hello, %s.", str);
+	j = ft_printf("hello, %s.", str);
+	printf("Return value of printf: %d\n Return value of ft_printf: %d\n", i, j);
+	return (0);
 }
