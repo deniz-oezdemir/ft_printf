@@ -6,7 +6,7 @@
 #    By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/25 17:03:56 by denizozd          #+#    #+#              #
-#    Updated: 2023/11/25 17:47:51 by denizozd         ###   ########.fr        #
+#    Updated: 2023/11/25 19:08:30 by denizozd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,7 @@ SRCS = ft_printf.c print_char.c print_str.c print_ptr.c print_int.c\
 	print_uns.c print_hex.c
 OBJS = ${SRCS:.c=.o}
 
-
 #	Targets		#
-
 all: $(NAME)
 
 makelib:
