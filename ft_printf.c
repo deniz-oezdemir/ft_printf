@@ -6,7 +6,7 @@
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:13:01 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 22:42:51 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 23:11:55 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ int	ft_printf(const char *str, ...)
 			i = i + print_char(*str);
 		str++;
 	}
+	va_end(args);
 	return (i);
 }

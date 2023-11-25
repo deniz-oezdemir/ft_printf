@@ -29,6 +29,15 @@ int	main(void)
 	j = ft_printf(" %x \n", 0);
 	printf("Return value of printf: %d\nReturn value of ft_printf: %d\n\n", i, j);
 
+ 
+	//error
+	printf("Test error because of wrong specifier:\n");
+	char *test = "Hello, world!";
+	i = printf(" %d \n", test);
+	j = ft_printf(" %d \n", test);
+	int k;
+	k = dprintf(" %d \n", test);
+	printf("Return value of printf: %d\nReturn value of ft_printf: %d\nReturn value of dprintf: %d\n\n", i, j, k);
 
 	return (0);
 }
