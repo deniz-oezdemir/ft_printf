@@ -6,18 +6,20 @@
 /*   By: denizozd <denizozd@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:43:59 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 19:00:46 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 21:18:58 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	hex_len(unsigned int n)
+static int	hex_len(unsigned int n)
 {
 	int	len;
 
 	len = 0;
-	while (len)
+	if (!n)
+		len = 1;
+	while (n)
 	{
 		n = n / 16;
 		len ++;

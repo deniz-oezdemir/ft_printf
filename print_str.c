@@ -6,7 +6,7 @@
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 12:38:22 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/24 13:36:18 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 20:43:09 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	print_str(char *str)
 	i = 0;
 	if (!str)
 	{
-		ft_putstr_fd("(nil)", 1);
-		return (5);
+		ft_putstr_fd("(null)", 1);
+		return (6);
 	}
 	while (str[i])
 		i++;

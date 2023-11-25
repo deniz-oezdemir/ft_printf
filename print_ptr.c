@@ -6,7 +6,7 @@
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:08:07 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 19:14:38 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 20:53:16 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	print_ptrhex(unsigned long ptr)
 		if (ptr <= 9)
 			ft_putchar_fd(ptr + '0', 1);
 		else
-			ft_putchar_fd(ptr + 'A' - 10, 1);
+			ft_putchar_fd(ptr + 'a' - 10, 1);
 	}
 	return (count_ptr(ptr));
 }
@@ -50,12 +50,12 @@ int	print_ptr(unsigned long ptr)
 	if (!ptr)
 	{
 		ft_putstr_fd("(nil)", 1);
-		return (5);
+		len = 5;
 	}
 	else
 	{
 		ft_putstr_fd("0x", 1);
-		len = len + print_ptrhex(ptr);
+		len = 2 + print_ptrhex(ptr);
 	}
 	return (len);
 }
