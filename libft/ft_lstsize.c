@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 14:16:28 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 16:10:46 by denizozd         ###   ########.fr       */
+/*   Created: 2023/11/17 16:28:40 by denizozd          #+#    #+#             */
+/*   Updated: 2023/11/20 23:04:08 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include "./libft/libft.h"
+int	ft_lstsize(t_list *lst)
+{
+	size_t	size;
 
-int	ft_printf(const char *input, ...);
-int	print_char(char c);
-int	print_str(char *s);
-int	print_ptr(unsigned long p);
-int	print_int(int n);
-int	print_uns(unsigned int n);
-int	print_hex(unsigned int n, int format);
-
-#endif
+	size = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		size++;
+	}
+	return (size);
+}
+/* uses the pointer lst to iterate throught the list and count its elements */
+/* does not modify the list */

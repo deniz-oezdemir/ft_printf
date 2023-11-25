@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 14:16:28 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 16:10:46 by denizozd         ###   ########.fr       */
+/*   Created: 2023/11/16 14:13:31 by denizozd          #+#    #+#             */
+/*   Updated: 2023/11/20 19:41:26 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include "./libft/libft.h"
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
 
-int	ft_printf(const char *input, ...);
-int	print_char(char c);
-int	print_str(char *s);
-int	print_ptr(unsigned long p);
-int	print_int(int n);
-int	print_uns(unsigned int n);
-int	print_hex(unsigned int n, int format);
-
-#endif
+	i = 0;
+	if (s && f)
+	{
+		while (*s)
+			f(i++, s++);
+	}
+}
+/* similar to strmapi, but applies f on the original string */

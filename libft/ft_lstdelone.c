@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 14:16:28 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 16:10:46 by denizozd         ###   ########.fr       */
+/*   Created: 2023/11/17 17:40:01 by denizozd          #+#    #+#             */
+/*   Updated: 2023/11/20 23:16:15 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include "./libft/libft.h"
-
-int	ft_printf(const char *input, ...);
-int	print_char(char c);
-int	print_str(char *s);
-int	print_ptr(unsigned long p);
-int	print_int(int n);
-int	print_uns(unsigned int n);
-int	print_hex(unsigned int n, int format);
-
-#endif
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
+}
+/* deletes list element's content with del function and frees element */

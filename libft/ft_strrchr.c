@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 14:16:28 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 16:10:46 by denizozd         ###   ########.fr       */
+/*   Created: 2023/11/10 17:02:56 by denizozd          #+#    #+#             */
+/*   Updated: 2023/11/20 15:56:43 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include "./libft/libft.h"
+char	*ft_strrchr(const char *s, int c)
+{
+	size_t	i;
+	char	f;
 
-int	ft_printf(const char *input, ...);
-int	print_char(char c);
-int	print_str(char *s);
-int	print_ptr(unsigned long p);
-int	print_int(int n);
-int	print_uns(unsigned int n);
-int	print_hex(unsigned int n, int format);
-
-#endif
+	f = (char) c;
+	i = 0;
+	while (s[i])
+		i++;
+	if (f == '\0')
+		return ((char *) &s[i]);
+	while (i > 0)
+	{
+		i--;
+		if (s[i] == f)
+			return ((char *) &s[i]);
+	}
+	return (NULL);
+}
+/* locates last occurence of char c in string s */
+/* caution: c might be the NULL-terminator */

@@ -22,7 +22,7 @@ int	conversion(const char *str, void *arg)
 	else if (*str == 's')
 		i = i + print_str((char *)arg);
 	else if (*str == 'p')
-		i = i + print_adr((unsigned long)arg);
+		i = i + print_ptr((unsigned long)arg);
 	else if (*str == 'd')
 		i = i + print_int((int)arg);
 	else if (*str == 'i')
