@@ -6,7 +6,7 @@
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:13:01 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 19:33:23 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:51:12 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,4 @@ int	ft_printf(const char *str, ...)
 		str++;
 	}
 	return (i);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	//string
-	int	i;
-	int	j;
-	printf("Test 3:\n");
-	char str[] = "friend";
-	i = printf("hello, %s.", str);
-	j = ft_printf("hello, %s.", str);
-	printf("Return value of printf: %d\n Return value of ft_printf: %d\n", i, j);
-	return (0);
 }
