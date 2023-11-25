@@ -6,7 +6,7 @@
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:23:15 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/25 18:17:03 by denizozd         ###   ########.fr       */
+/*   Updated: 2023/11/25 22:50:46 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,3 @@ int	print_uns(unsigned int n)
 		return (1);
 	}
 }
-
-/*
-#include <stdio.h>
-int main(void)
-{
-	unsigned int number = 387;
-
-	printf("Testing with number %u:\n", number);
-	int digit_count = print_uns(number);
-	printf("\nTotal digits: %d\n", digit_count);
-
-	return (0);
-}
-*/
