@@ -6,7 +6,7 @@
 /*   By: denizozd <denizozd@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:28:40 by denizozd          #+#    #+#             */
-/*   Updated: 2023/11/20 23:04:08 by denizozd         ###   ########.fr       */
+/*   Updated: 2024/01/02 19:05:07 by denizozd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (size);
 }
-/* uses the pointer lst to iterate throught the list and count its elements */
+/* iterates throught the list and count its elements */
 /* does not modify the list */

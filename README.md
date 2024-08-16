@@ -1,1 +1,2 @@
-# 42-ft_printf
+# ft_printf
+Creating a basic version of the `printf()` function
